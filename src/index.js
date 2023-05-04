@@ -56,7 +56,6 @@ async function axioPhoto(q) {
 
 function creatCardPhoto(r) {
   refs.gallery.insertAdjacentHTML('beforeend', photoCard(r));
-
   const simple = new SimpleLightbox('.photo-card a', {
     captionsData: 'alt',
     captionDelay: '250',
