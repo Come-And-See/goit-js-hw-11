@@ -18,24 +18,3 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
-.countrycard {
-  list-style: none;
-  display: flex;
-  gap: 5px;
-  margin-bottom: 10px;
-  align-items: center;
-  padding-left: 0;
-}
-.country-img {
-  width: 40px;
-  height: 30px;
-}
-.countryUl{
-   list-style: none;
-   padding: 0;
-}
-
-.comma:not(:last-child):after{
-  content: ',';
-}
-
