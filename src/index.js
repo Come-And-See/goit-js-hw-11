@@ -56,6 +56,7 @@ async function axioPhoto(q) {
 
 function creatCardPhoto(r) {
   refs.gallery.insertAdjacentHTML('beforeend', photoCard(r));
+
   const simple = new SimpleLightbox('.photo-card a', {
     captionsData: 'alt',
     captionDelay: '250',
@@ -72,7 +73,6 @@ const callback = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting && refs.input.value !== '' && PAGE >= 2) {
       axioPhoto(refs.input.value);
-      qqq.refresh();
     }
   });
 };
