@@ -11,6 +11,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const BASE_URL = 'https://pixabay.com/api/';
 const KEY = '11680265-49a2c7c2ef17772c90d3b7b54';
 let PAGE = 1;
+let simple;
 
 const refs = {
   input: document.querySelector('input[name="searchQuery"]'),
@@ -54,13 +55,12 @@ async function axioPhoto(q) {
   }
 }
 
-function creatCardPhoto(r) {
-  refs.gallery.insertAdjacentHTML('beforeend', photoCard(r));
-  const simple = new SimpleLightbox('.photo-card a', {
+function creatCardPhoto(e) {
+  refs.gallery.insertAdjacentHTML('beforeend', photoCard(e));
+  simple = new SimpleLightbox('.photo-card a', {
     captionsData: 'alt',
     captionDelay: '250',
   });
-  simple.refresh();
 }
 
 function onNewSearch() {
@@ -72,6 +72,7 @@ const callback = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting && refs.input.value !== '' && PAGE >= 2) {
       axioPhoto(refs.input.value);
+      simple.refresh();
     }
   });
 };
