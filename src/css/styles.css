@@ -18,3 +18,55 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 75px;
+}
+
+.photo-card {
+  width: 350px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.photo-card > a > img {
+  width: 350px;
+  height: 220px;
+}
+.info {
+  display: flex;
+  gap: 10px;
+}
+
+.info-item {
+  text-align: center;
+}
+
+.search-form {
+  background: #4a4ace;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.search-form > input {
+  width: 300px;
+  height: 30px;
+  border-radius: 2px;
+  border: 0;
+  padding-left: 10px;
+  outline: 0;
+}
+.search-form > button {
+  margin-left: -6px;
+  border: 0;
+  height: 30px;
+  border-radius: 2px;
+  cursor: pointer;
+}
