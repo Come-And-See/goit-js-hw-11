@@ -13,6 +13,8 @@ const KEY = '11680265-49a2c7c2ef17772c90d3b7b54';
 let PAGE = 1;
 let simple;
 
+let isNotifyShown = false;
+
 const refs = {
   input: document.querySelector('input[name="searchQuery"]'),
   button: document.querySelector('button[type="submit"]'),
@@ -45,8 +47,11 @@ async function axioPhoto(q) {
 
     if (response.data.hits.length === 0) {
       throw 'error';
-    } else {
+    }
+
+    if (!isNotifyShown) {
       Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
+      isNotifyShown = true;
     }
   } catch (error) {
     Notify.failure(
@@ -66,6 +71,7 @@ function creatCardPhoto(e) {
 function onNewSearch() {
   refs.gallery.innerHTML = '';
   PAGE = 1;
+  isNotifyShown = false;
 }
 
 const callback = entries => {
